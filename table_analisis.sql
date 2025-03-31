@@ -1,6 +1,5 @@
 CREATE TABLE `kimia_farma.tabel_analisis` AS
-	SELECT 
-		t.transaction_id, t.date, t.branch_id, 
+SELECT t.transaction_id, t.date, t.branch_id, 
     b.branch_name, b.kota, b.provinsi, b.rating AS rating_cabang, 
     t.customer_name, t.product_id, p.product_name, 
     p.price AS actual_price, t.discount_percentage,
@@ -28,9 +27,9 @@ CREATE TABLE `kimia_farma.tabel_analisis` AS
     END AS nett_profit,
   
     t.rating AS rating_transaksi
-  FROM `kimia_farma.kf_final_transaction` t
-  JOIN `kimia_farma.kf_kantor_cabang` b 
-    ON t.branch_id = b.branch_id -- Menggabungkan tabel kf_final_transaction (dengan alias t) dan kf_kantor_cabang (dengan alias b)
-  JOIN `kimia_farma.kf_product` p
-    ON t.product_id = p.product_id -- Menggabungkan tabel dengan tabel kf_product (dengan alias p)
+FROM `kimia_farma.kf_final_transaction` t
+JOIN `kimia_farma.kf_kantor_cabang` b 
+	ON t.branch_id = b.branch_id -- Menggabungkan tabel kf_final_transaction (dengan alias t) dan kf_kantor_cabang (dengan alias b)
+JOIN `kimia_farma.kf_product` p
+	ON t.product_id = p.product_id -- Menggabungkan tabel dengan tabel kf_product (dengan alias p)
 
