@@ -18,3 +18,6 @@ Salah satu proyek utama sebagai seorang Big Data Analytics Intern di Kimia Farma
 
 ## Used tools
 BigQuery, Google Looker Studio
+
+## Link Dashboard
+https://lookerstudio.google.com/s/mQtb9B3qboc
